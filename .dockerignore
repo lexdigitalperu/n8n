@@ -2,8 +2,12 @@
 # but not other .md files
 **/*.md
 !**/THIRD_PARTY_LICENSES.md
+
+# No incluir variables ni caché
 **/.env
 .cache
+
+# Carpetas pesadas o innecesarias
 assets
 node_modules
 packages/node-dev
@@ -11,12 +15,30 @@ packages/**/node_modules
 packages/**/dist
 packages/**/.turbo
 packages/**/*.test.*
+packages/testing
+cypress
+
+# Git y configuraciones
 .git
 .github
 !.github/scripts
 *.tsbuildinfo
+.vscode
+
+# Docker interno del repo
 docker/compose
 docker/**/Dockerfile
-.vscode
-packages/testing
-cypress
+
+# -----------------------------------------
+# 👉 Líneas nuevas recomendadas para Railway
+# -----------------------------------------
+
+# Ignorar logs
+logs
+*.log
+
+# Ignorar archivo .dockerignore dentro de la imagen
+.dockerignore
+
+# Ignorar el README (no es necesario dentro del contenedor)
+README.md
